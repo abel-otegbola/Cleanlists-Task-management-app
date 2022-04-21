@@ -1,0 +1,126 @@
+
+/*
+Home styles
+*/
+.home {
+    padding: 5% 17%;
+  }
+  .home .heading {
+    text-align: center;
+    /* background-image: url("./assets/imgs/heading_background.png");
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: 50% 50%;
+    background-attachment:fixed; */
+  }
+  .home .heading .heading_texts h1 {
+    width: 450px;
+    margin: auto;
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 45px;
+  }
+  .home .heading .heading_texts p {
+    width: 370px;
+    margin: auto;
+    line-height: 20px;
+    margin-top: 15px;
+    font-weight: 500;
+    color: rgb(147, 146, 146);
+  }
+  .home .heading img {
+    margin-top: 6%;
+    margin-left: -4%;
+  }
+  .home .sections {
+    padding-top: 20%;
+  }
+  .home .sections .section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .home .sections .section img {
+    width: 50%;
+  }
+  .home .sections .section .home_section_text {
+    margin: 15px 45px;
+    line-height: 30px;
+  }
+  .home .sections .section .home_section_text h1 {
+    line-height: 50px;
+    font-size: 35px;
+  }
+  .home .sections .section .home_section_text h1 span {
+    color: #04EC4A;
+  }
+  .home .sections .section .home_section_text p {
+    font-size: 14px;
+    font-weight: 500;
+    width: 80%;
+  }
+  .home .login {
+    padding: 20% 3% 5% 3%;
+  }
+  .home .login a {
+    background-color: #04EC4A;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+  }
+  .home .login a:hover {
+    background-color: #0db43f;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .home {
+      padding: 5% 10%;
+    }
+    .home .sections img {
+      max-height: 300px;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .home .sections .section {
+      flex-wrap: wrap;
+    }
+    .home .sections .section img {
+      width: 100%;
+      max-height: 500px;
+    }
+    .home .sections .section .home_section_text {
+      margin: 15px 5px;
+      order: 2;
+    }
+    .home .signup form label input {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #95B0F9;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .home .heading .heading_texts h1 {
+      font-size: 25px;
+      line-height: 35px;
+      width: 100%;
+    }
+    .home .heading .heading_texts p {
+      width: 100%;
+      line-height: 20px;
+    }
+    .home .sections .section .home_section_text h1 {
+      line-height: 40px;
+      font-size: 25px;
+    }
+    .home .signup form {
+      padding: 5% 0;
+    }
+    .home .signup h1 {
+      font-size: 25px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .home {
+      padding: 5% 5%;
+    }
+  }

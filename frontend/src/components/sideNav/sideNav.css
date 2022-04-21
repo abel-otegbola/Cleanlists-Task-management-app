@@ -1,0 +1,179 @@
+.side-nav {
+    padding: 10px 10px 10% 10px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 3px 3px 10px rgb(219, 218, 218);
+    width: 17%;
+    position: relative;
+    transition: 1s;
+    border-radius: 5px;
+}
+.side-nav .toggle {
+    padding: 10px 2px 10px 5px;
+    border-radius: 10px 0 0 10px;
+    background-color: #1d22ae;
+    color: #fff;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    width: 10px;
+    transform: rotateZ(0deg);
+    z-index: 1000;
+}
+.side-nav .user {
+    display: flex;
+    margin-left: 10px;
+}
+.side-nav .user img {
+    margin-right: 10px;
+    border: 5px solid #0ddd4b;
+    border-radius: 7px;
+}
+.side-nav .search {
+    background: rgb(237, 236, 236);
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.search input{
+    border: none;
+    background: transparent;
+    padding: 7px;
+    width: 100%;
+    transition-delay: 1s;
+}
+.search svg:nth-child(1) {
+    color: rgb(186, 186, 186);
+}
+.search svg:nth-child(3) {
+    color: rgb(239, 6, 6);
+}
+.side-nav__main {
+    padding: 30px 0;
+    border-bottom: 1px solid rgb(205, 203, 203);
+}
+.side-nav__main p {
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.side-nav__main ul li {
+    display: flex;
+}
+.side-nav__main ul li a {
+    padding: 10px;
+    margin: 3px 0;
+    flex: 1;
+    border-radius: 5px;
+    font-weight: 600;
+    color: rgb(135, 134, 134);
+}
+.side-nav__main ul li a.active {
+    background: #0ddd4b;
+    color: #fff;
+}
+.side-nav__main ul li a svg {
+    margin-right: 10px;
+}
+.side-nav__main ul li a:hover {
+    background: #0ddd4b;
+    color: #fff;
+}
+.side-nav__bottom {
+    margin: 50px 0;
+}
+.side-nav__bottom ul {
+    display: flex;
+    justify-content: space-between;
+    background: #1d22ae;
+    padding: 5px;
+    border-radius: 10px;
+}
+.side-nav__bottom ul li {
+    display: flex;
+}
+.side-nav__bottom ul li a {
+    padding: 5px 10px;
+    color: #fff;
+    margin: 0;
+    border-radius: 7px;
+}
+.side-nav__bottom ul li a:hover {
+    background: #0b0e5d;
+}
+
+
+.side-nav.close {
+    width: 40px;
+    padding: 10px 10px 10% 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.side-nav.close .toggle {
+    transform: rotateZ(180deg);
+    right: -17px;
+}
+.side-nav.close span {
+    display: none;
+}
+.side-nav.close .user h4 {
+    display: none;
+}
+.side-nav.close p {
+    visibility: hidden;
+}
+.side-nav.close .search {
+    width: 0px;
+    margin: 15px 10px 0 10px;
+    justify-content: center;
+}
+.side-nav.close .search input {
+    display: none;
+}
+.side-nav.close .search svg:nth-child(1) {
+    padding: 3px 0;
+}
+.side-nav.close .search svg:nth-child(3) {
+    display: none;
+}
+.side-nav.close .side-nav__main {
+    width: 45px;
+}
+.side-nav.close .side-nav__main li a {
+    padding: 10px;
+    text-align: center;
+}
+.side-nav.close .side-nav__main ul li a svg {
+    margin-right:0;
+}
+.side-nav.close .side-nav__bottom ul li {
+    display: none;
+    padding: 5px 0px;
+}
+.side-nav.close .side-nav__bottom ul li a {
+    padding: 5px 10px;
+}
+.side-nav.close .side-nav__bottom ul li {
+    display: none;
+}
+.side-nav.close .side-nav__bottom ul li:nth-child(1) {
+    display: block;
+}
+
+@media screen and (max-width: 1200px) {
+    .side-nav {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: 230px;
+        z-index: 1000;
+    }
+}
+@media screen and (max-width: 500px) {
+    .side-nav.close {
+        display: none;
+    }
+}

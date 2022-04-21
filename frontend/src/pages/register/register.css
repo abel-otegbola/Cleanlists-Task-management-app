@@ -1,0 +1,49 @@
+
+.register {
+    padding: 5% 17%;
+  }
+.register h1 {
+    font-size: 30px;
+    margin-left: 10px;
+    text-align: center;
+  }
+.register p {
+    word-spacing: 1px;
+    text-align: center;
+}
+.register p a {
+    color: #04EC4A;
+    font-weight: 600;
+}
+.register form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 5% auto;
+    padding: 3%;
+    width: 50%;
+    border: 1px solid #e6eaf6;
+  }
+.register form label {
+    width: 100%;
+    margin: 3px;
+  }
+.register form label input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #b3f6c7;
+  }
+.register form button {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0;
+    font-weight: 600;
+    color: #fff;
+    background-color: #04EC4A;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+.register form button:hover {
+    background-color: #0fc746;
+}

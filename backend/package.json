@@ -1,0 +1,28 @@
+{
+  "name": "task_manager",
+  "version": "1.0.0",
+  "description": "task management application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "task",
+    "manager",
+    "todo",
+    "list"
+  ],
+  "author": "abel",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-sqlite3": "^0.9.13",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.3.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  }
+}
