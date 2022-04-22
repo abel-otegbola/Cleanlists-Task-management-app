@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFire, faPlusCircle, faTasks } from "@fortawesome/free-solid-svg-icons";
-import demoUser from "../../assets/imgs/demouser.jpg"
+import demoUser from "../../../assets/imgs/demouser.jpg"
 import { Doughnut } from 'react-chartjs-2'; 
+import "./overview.css"
 
 const Overview = ({ user, tasksArray }) => {
     const [tasksctx, setTasksCtx] = useState()

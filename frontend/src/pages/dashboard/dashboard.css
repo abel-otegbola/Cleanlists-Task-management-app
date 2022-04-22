@@ -1,0 +1,46 @@
+.dashboard {
+    display: flex;
+    align-items: flex-start;
+    background-color: rgb(227, 237, 253);
+}
+.dashboard section {
+    flex: 1;
+    padding: 10px 10px 10px 0;
+}
+  
+.charts_and_info {
+    display: flex;
+}
+  
+
+
+@media screen and (max-width: 1200px) {
+    .dashboard section {
+        /* padding-left: 80px; */
+        padding: 10px;
+    }
+    
+}
+@media screen and (max-width: 900px) {
+    .dashboard section {
+        width: 100%;
+    }
+    .charts_and_info {
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 700px) {
+    .actions {
+        flex-wrap: wrap;
+    }
+    .chart.today {
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .dashboard section {
+        padding-left: 10px;
+    }
+}

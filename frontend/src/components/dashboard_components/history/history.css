@@ -1,0 +1,111 @@
+
+.history {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 10px;
+}
+.history h2.heading {
+    margin-left: 30px;
+    margin-bottom: 0;
+}
+.history .chart-overview {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.history .chart-overview .chart {
+    border: 1px solid rgb(173, 236, 249);
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+.history .chart-overview h3 {
+    padding: 10px 20px;
+    font-size: 12px;
+    margin: 10px;
+    text-transform: uppercase;
+    border: 1px solid rgb(173, 236, 249);
+    border-radius: 5px;
+}
+.history .chart-overview h3 span {
+    background-color: #0ff62d;
+    color: #Fff;
+    padding: 3px 5px;
+    margin: 0 10px;
+}
+.history .history-box {
+    display: flex;
+    background-color: rgb(226, 231, 249);
+    justify-content: space-evenly;
+}
+.history .history-box .completed,
+.history .history-box .unfinished  {
+    width: 48%;
+    padding: 20px;
+    margin: 10px;
+    background-color: #Fff;
+}
+.history .history-box h2 {
+    padding: 20px;
+    margin-left: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.history .history-box .task {
+    padding: 10px 30px;
+    border: 1px solid rgb(207, 220, 224);
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.history .history-box .task h4 {
+    line-height: 20px;
+    width: 100%;
+}
+.history .history-box .task p {
+    margin: 10px;
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 3px;
+}
+.history .history-box .task p:nth-child(2) {
+    background: rgb(250, 209, 209);
+    color: rgb(194, 46, 46);
+}
+.history .history-box .task p.High:nth-child(2) {
+    background: rgb(209, 228, 250);
+    color: rgb(46, 100, 194);
+}
+.history .history-box .task p:nth-child(3) {
+    background: rgb(249, 238, 173);
+    color: rgb(180, 150, 17);
+}
+.history .history-box .task p:nth-child(4) {
+    background: rgb(173, 182, 249);
+    color: rgb(17, 74, 180);
+}
+.history .history-box .task p.completed:nth-child(5) {
+    background: rgb(210, 249, 173);
+    color: rgb(17, 180, 20);
+}
+.history .history-box .task p.ongoing:nth-child(5) {
+    background: rgb(173, 182, 249);
+    color: rgb(17, 74, 180);
+}
+.history .history-box .task p.upcoming:nth-child(5) {
+    background: rgb(173, 236, 249);
+    color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 700px) {
+    .history .history-box {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .history .history-box .completed,
+    .history .history-box .unfinished {
+        width: 100%;
+    }
+}

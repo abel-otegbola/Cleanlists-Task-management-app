@@ -1,0 +1,95 @@
+/*
+Navbar styles
+*/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 0;
+    box-shadow: 2px 5px 10px rgba(107, 107, 107, 0.093);
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+}
+.navbar .brand {
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
+}
+.navbar .brand .logo {
+    margin-right: 10px;
+}
+.navbar .brand a {
+    font-weight: 700;
+}
+.navbar .menu {
+    padding: 15px;
+    z-index: 10;
+    font-weight: 600;
+    margin-right: 20%;
+}
+.navbar .menu nav {
+    background-color: #fff;
+    display: none;
+    position: fixed;
+    right: 17%;
+    top: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 20px rgb(211, 210, 210);
+}
+.navbar .menu:hover nav {
+    display: block;
+}
+.navbar .menu nav ul li {
+    display: flex;
+    min-width: 120px;
+}
+.navbar .menu nav ul li a {
+    padding: 7px;
+    flex: 1;
+    color: rgb(153, 151, 151);
+}
+.navbar .menu nav ul li a:hover {
+    color: #04EC4A;
+}
+.navbar .menu nav:before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    top: -14px;
+    right: 10px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #fff;
+    border-bottom: 10px solid #fff;
+    filter: drop-shadow(2px 5px 20px rgb(211, 210, 210));
+}
+
+/* Make responsive */
+@media screen and (max-width: 900px) {
+    .navbar {
+        width: 100%;
+    }
+    .navbar .brand{
+        margin-left: 10%;
+    }
+    .navbar .menu {
+        margin-right: 10%;
+    }
+}
+  
+@media screen and (max-width: 400px) {
+    .navbar .brand{
+        margin-left: 5%;
+    }
+    .navbar .menu {
+        margin-right: 5%;
+    }
+}
+  

@@ -1,25 +1,11 @@
-import Overview from "../../components/dashboard_components/overview"
-import Activity from "../../components/dashboard_components/activity"
+import Overview from "../../components/dashboard_components/overview/overview"
+import Activity from "../../components/dashboard_components/activity/activity"
+import History from "../../components/dashboard_components/history/history"
 import Search from "../../components/search/search"
 import SideNav from "../../components/sideNav/sideNav"
-import "../../components/dashboard_components/dashboard.css"
-import { useEffect, useState } from 'react';
-import History from "../../components/dashboard_components/history"
+import "./dashboard.css"
 
-const Dashboard = ({ user }) => {
-    const [tasksArray, setTasksArray] = useState([])
-
-
-    useEffect(() => {
-        //fetch the tasks from the database
-        fetch('/api/tasks/getTasks')
-        .then(res => res.json())
-        .then(data => {
-            setTasksArray(data)
-        })
-        .catch(err => console.log(err));
-
-    })
+const Dashboard = ({ user, tasksArray }) => {
 
     return (
         <div className="dashboard">

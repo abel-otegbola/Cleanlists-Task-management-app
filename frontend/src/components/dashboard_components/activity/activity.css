@@ -1,0 +1,23 @@
+.activity {
+    background: #fff;
+    padding: 0;
+    margin: 10px 0 0px 10px;
+    width: 35%;
+    border-radius: 5px;
+}
+.activity h2 {
+    margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .activity {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .activity .canvas {
+        width: 100%;
+    }
+}

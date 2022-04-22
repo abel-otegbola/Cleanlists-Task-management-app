@@ -1,0 +1,138 @@
+.overview {
+    margin: 10px 0 0 0;
+    background-color: #fff;
+    padding: 20px 4%;
+    border-radius: 5px;
+    width: 65%;
+    max-height: 65%;
+}
+.overview .user-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.overview .user-stats img {
+    border-radius: 50%;
+    margin-right: 7%;
+}
+.overview .user-stats .info .all-tasks,
+.overview .user-stats .info .remaining-tasks {
+    display: flex;
+    align-items: center;
+    padding: 2px 3px;
+    margin-right: 20px;
+    background-color: #0ff62d;
+    color: #fff;
+    border-radius: 20px;
+    line-height: 0px;
+}
+.overview .user-stats .info .all-tasks {
+    background-color: #0fd0f6;
+}
+.overview .user-stats .info {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 10px;
+}
+.overview .user-stats .info h1,
+.overview .user-stats .info p {
+    width: 100%;
+    line-height: 20px;
+}
+.overview .user-stats .info svg {
+    padding: 7px 10px;
+    background: rgba(0, 0, 0, 0.301);
+    border-radius: 15px;
+}
+.overview .user-stats .info h3 {
+    padding: 0px 10px;
+}
+.chart {
+    width: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.chart::before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    top: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    border-radius: 50%;
+}
+.chart h2 {
+    position: absolute;
+    top: 35%;
+    color: #0ff62d;
+    font-weight: 700;
+    font-size: 14px;
+}
+.actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 0 10px 0;
+    color: rgb(190, 189, 189);
+    align-items: center;
+}
+.actions h3 {
+    font-size: 14px;
+    padding: 3px;
+    line-height: 10px;
+}
+.actions span, .actions svg {
+    padding: 3px 5px;
+    margin: 5px;
+    border-radius: 8px;
+}
+.actions .action-button {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(217, 215, 215);
+    border-radius: 5px;
+    line-height: 0;
+    padding: 0 0 0 10px;
+}
+.actions .action-button a {
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    color: rgb(197, 197, 197);
+    font-size: 12px;
+}
+.actions h3:nth-child(1) span {
+    background-color: rgb(187, 187, 255);
+    color: #fff;
+}
+.actions h3:nth-child(2) span {
+    background-color: rgb(216, 216, 41);
+    color: #fff;
+}
+.actions h3:nth-child(3) span {
+    background-color: rgb(101, 213, 110);
+    color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+    .overview {
+        width: 100%;
+        max-height: none;
+    }
+}
+@media screen and (max-width: 700px) {
+    .overview .user-stats {
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .actions {
+        flex-wrap: wrap;
+    }
+    .chart.today {
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+}

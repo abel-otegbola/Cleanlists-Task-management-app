@@ -1,22 +1,17 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
-const SpaceList = ({ spaces, user, setSpace }) => {
-    const [active, setActive] = useState("")
+const SpaceList = ({ spaces, user, active, setActive }) => {
 
     const handleCreateSpace = (e) => {
         if(user === "" || user === undefined || user === null) {
             e.preventDefault()
         }
     }
-
     useEffect(() => {
-        setSpace(active)
-
-        window.addEventListener("load", () => {
+        if(active === "") {
             setActive(spaces[0].name)
-            console.log(active)
-        })
-    }, [active, setActive, setSpace, spaces])
+        }
+    },[spaces, active, setActive])
 
     return (
         <div className="space-list">

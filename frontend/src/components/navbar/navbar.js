@@ -1,14 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDashboard, faSignOutAlt, faTasksAlt } from "@fortawesome/free-solid-svg-icons";
-import logo from "../assets/imgs/logo.svg"
+import logo from "../../assets/imgs/logo.svg"
+import "./navbar.css"
 
-const Navbar = ({ user }) => {
-
-    const logout = () => {
-        fetch('/api/user/logout')
-        .then(res => console.log(res.json()))
-        .catch(err => console.log(err));
-    }
+const Navbar = ({ user, logout }) => {
 
     return(
         <div className="navbar">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2'; 
+import "./history.css"
 
 const History = ({ user, tasksArray }) => {
     const [tasksctx, setTasksCtx] = useState()
