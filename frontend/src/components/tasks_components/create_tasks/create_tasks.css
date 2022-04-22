@@ -2,33 +2,51 @@
 /*
 Create task styles
 */
+
+.create-tasks {
+  padding: 10px;
+}
+.create-tasks h4 {
+  text-align: center;
+  text-transform: capitalize;
+  color: #18db53;
+}
 .create-task {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    border: 1px solid rgb(227, 237, 253);
-    /* background-color: #0e163d;s */
-    border-radius: 10px;
-    margin-top: 10px;
-    padding: 10px;
-  }
-  .create-task label {
-    padding: 10px 5px;
-    font-size: 12px;
-  }
-  .create-task label input,
-  .create-task label select {
-    padding: 5px;
-    border: 1px solid rgb(227, 237, 253);
-    color: #929191;
-    width: 90px;
-    border-radius: 5px;
-  }
-  .create-task button {
-    padding: 8px 20px;
-    margin: 10px;
-    border: none;
-    background-color: rgb(0, 224, 15);
-    color: #fff;
-    border-radius: 5px;
-  }
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid rgb(227, 237, 253);
+  background-color: #f8fff5;
+  /* color: #fff; */
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px 3%;
+}
+.create-task label {
+  padding: 10px 5px;
+  font-size: 13px;
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.create-task label p {
+  font-weight: 600;
+  margin-left: 10px;
+}
+.create-task label input,
+.create-task label select {
+  padding: 10px;
+  border: 1px solid rgb(227, 237, 253);
+  color: #929191;
+  width: 100%;
+  border-radius: 5px;
+}
+.create-task button {
+  padding: 8px 20px;
+  margin: 10px;
+  border: none;
+  background-color: rgb(0, 224, 15);
+  color: #fff;
+  border-radius: 5px;
+}

@@ -30,7 +30,7 @@ const Spaces = ({ user, tasksArray }) => {
                 <div className="spaces-board">
                     <SpaceList spaces={spaces} user={user} setActive={setActive} active={active}/>
                 </div>
-                <TasksList selected={selected} user={user} tasksArray={tasks}/>
+                <TasksList selected={selected} user={user} tasksArray={tasks} view={"list"}/>
             </section>
 
         </div>

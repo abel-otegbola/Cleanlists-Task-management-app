@@ -8,8 +8,8 @@ const SpaceList = ({ spaces, user, active, setActive }) => {
         }
     }
     useEffect(() => {
-        if(active === "") {
-            setActive(spaces[0].name)
+        if(spaces !== [] && spaces !== undefined && spaces !== "") {
+            console.log(spaces)
         }
     },[spaces, active, setActive])
 

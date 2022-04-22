@@ -27,5 +27,7 @@ ul {
 li {
   list-style-type: none;
 }
-
+input:focus {
+  outline: 1px solid #18db53;
+}
 

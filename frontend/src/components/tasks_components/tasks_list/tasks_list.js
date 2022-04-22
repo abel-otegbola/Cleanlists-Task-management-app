@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faEllipsisVertical, faBarsProgress, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import "./tasks_list.css"
 import { useEffect, useState } from "react";
+import task_bg from "../../../assets/imgs/task-bg.JPG"
+
+
 
 const TasksList = ({ user, view, tasksArray }) => {
     const [options, setOptions] = useState({show: false, id: 0})
@@ -46,8 +49,8 @@ const TasksList = ({ user, view, tasksArray }) => {
                         { 
                             tasks.filter(element => (element.createdBy === user)).map(task => { return (  
                                 <div key={task.id} className={`task-grids ${task.status}`}>
-                                    <h4>
-                                    {task.title}</h4>
+                                    <img src={task_bg} alt="task-bg"/>
+                                    <h4>{task.title}</h4>
 
                                     <p><span>{task.date}</span> | <span>{task.deadline} min</span></p>
                                     <p className={`status ${task.status}`}><span>{task.priority}</span>{task.status}</p>

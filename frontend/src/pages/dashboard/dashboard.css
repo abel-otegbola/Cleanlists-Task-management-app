@@ -15,9 +15,8 @@
 
 
 @media screen and (max-width: 1200px) {
-    .dashboard section {
-        /* padding-left: 80px; */
-        padding: 10px;
+    .dashboard {
+        padding-left: 80px;
     }
     
 }

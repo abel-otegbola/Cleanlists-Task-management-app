@@ -54,3 +54,9 @@
     color: #0ff62d;
     text-transform: capitalize;
 }
+
+@media screen and (max-width: 1200px) {
+  .tasks {
+    padding-left: 80px;
+  }
+}

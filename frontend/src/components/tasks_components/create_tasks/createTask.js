@@ -34,10 +34,7 @@ const CreateTask = ({ user }) => {
                 </label>
                 <label>
                     <p>Duration:</p>
-                    <div style={{ display: "flex" }}>
-                        <input type="text" name="deadline" placeholder="How long in minutes"/>
-                    </div>
-                    
+                    <input type="text" name="deadline" placeholder="How long in minutes"/>
                 </label>
                 <label>
                     <p>Priority:</p>
