@@ -14,6 +14,8 @@
 .overview .user-stats img {
     border-radius: 50%;
     margin-right: 7%;
+    padding: 5px;
+    border: 1px solid #0ff62d;
 }
 .overview .user-stats .info .all-tasks,
 .overview .user-stats .info .remaining-tasks {
@@ -74,9 +76,12 @@
 .actions {
     display: flex;
     justify-content: space-between;
-    padding: 5% 0 10px 0;
+    padding: 10px 20px;
+    margin: 10px 0;
     color: rgb(190, 189, 189);
     align-items: center;
+    border: 1px solid #e1f4f7;
+    border-radius: 10px;
 }
 .actions h3 {
     font-size: 14px;

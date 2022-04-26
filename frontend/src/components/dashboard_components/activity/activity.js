@@ -5,40 +5,51 @@ import "./activity.css"
 const Activity = ({ user, tasksArray }) => {
     const [salesctx, setSalesCtx] = useState()
     const [tasks, setTasks] = useState()
-    const [todayTasks, setTodayTasks] = useState()
-    const [yesterdayTasks, setYesterdayTasks] = useState()
-    const [dbyTasks, setDby] = useState()
-    const [ddbyTasks, setDdby] = useState()
+    const [todayTasks, setTodayTasks] = useState([])
+    const [yesterdayTasks, setYesterdayTasks] = useState([])
+    const [dbyTasks, setDby] = useState([])
+    const [ddbyTasks, setDdby] = useState([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
 
+        const yTimeStamp = new Date().getTime() - 24*60*60*1000
+        const dbyTimeStamp = new Date().getTime() - (48*60*60*1000)
+        const ddbyTimeStamp = new Date().getTime() - (72*60*60*1000)
+
         const today = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-${new Date().getDate()}`
-        const yesterday = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-${new Date().getDate() - 1}`
-        const dby = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-${new Date().getDate() - 2}`
-        const ddby = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-${new Date().getDate() - 3}`
+        const yesterday = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-${new Date(yTimeStamp).getDate()}`
+        const dby = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-${new Date(dbyTimeStamp).getDate()}`
+        const ddby = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-${new Date(ddbyTimeStamp).getDate()}`
     
         setTasks(tasksArray.filter(task => task.createdBy === user))
-        setTodayTasks(tasksArray.filter(task => (task.date === today)))
-        setYesterdayTasks(tasksArray.filter(task => (task.date === yesterday)))
-        setDby(tasksArray.filter(task => (task.date === dby)))
-        setDdby(tasksArray.filter(task => (task.date === ddby)))
+        setTodayTasks(tasksArray.filter(task => (task.date === today && task.createdBy === user)))
+        setYesterdayTasks(tasksArray.filter(task => (task.date === yesterday && task.createdBy === user)))
+        setDby(tasksArray.filter(task => (task.date === dby && task.createdBy === user)))
+        setDdby(tasksArray.filter(task => (task.date === ddby && task.createdBy === user)))
+
 
         
         setLoading(false)
 
         let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
+        let date = new Date().getDay()
 
         if (!loading) {
         setSalesCtx({
-                 labels: [days[new Date().getDay() - 3], days[new Date().getDay() - 2], days[new Date().getDay() - 1], days[new Date().getDay()]],
+                 labels: [
+                    days[(date === 2) ? 6 : (date === 1) ? 5 : (date === 0) ? 4 : date - 3], 
+                    days[(date === 1) ? 6 : (date === 0) ? 5 : date - 2], 
+                    days[(date === 0) ? 6 : date - 1], 
+                    days[date]
+                ],
                  datasets: [{
                      label: '',
                      data: [
-                         ddbyTasks.filter(task => task.status === "completed").length, 
-                         dbyTasks.filter(task => task.status === "completed").length, 
-                         yesterdayTasks.filter(task => task.status === "completed").length, 
-                         todayTasks.filter(task => task.status === "completed").length
+                         ddbyTasks.filter(task => task.status === "completed").length || 0, 
+                         dbyTasks.filter(task => task.status === "completed").length || 0, 
+                         yesterdayTasks.filter(task => task.status === "completed").length || 0, 
+                         todayTasks.filter(task => task.status === "completed").length || 0
                     ],
                      options: {
                          scales: {

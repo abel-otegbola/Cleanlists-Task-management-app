@@ -11,6 +11,7 @@
 .history .chart-overview {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 20px;
     flex-wrap: wrap;
 }

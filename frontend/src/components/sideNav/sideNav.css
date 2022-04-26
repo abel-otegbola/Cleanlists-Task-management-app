@@ -1,5 +1,5 @@
 .side-nav {
-    padding: 10px 10px 10% 10px;
+    padding: 20px 10px 10% 10px;
     margin: 10px;
     background-color: #fff;
     box-shadow: 3px 3px 10px rgb(219, 218, 218);
@@ -15,7 +15,7 @@
     color: #fff;
     position: absolute;
     right: 0px;
-    top: 10px;
+    top: 20px;
     width: 10px;
     transform: rotateZ(0deg);
     z-index: 1000;
@@ -26,12 +26,14 @@
 }
 .side-nav .user img {
     margin-right: 10px;
-    border: 5px solid #0ddd4b;
+    padding: 3px;
+    border: 1px solid #0ddd4b;
     border-radius: 7px;
 }
 .side-nav .search {
-    background: rgb(237, 236, 236);
+    background: rgb(227, 237, 253);
     padding: 5px 20px;
+    margin-top: 20px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -87,9 +89,9 @@
 .side-nav__bottom ul {
     display: flex;
     justify-content: space-between;
-    background: #1d22ae;
+    background: #2246bd;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .side-nav__bottom ul li {
     display: flex;
@@ -98,7 +100,7 @@
     padding: 5px 10px;
     color: #fff;
     margin: 0;
-    border-radius: 7px;
+    border-radius: 3px;
 }
 .side-nav__bottom ul li a:hover {
     background: #0b0e5d;
@@ -107,7 +109,7 @@
 
 .side-nav.close {
     width: 40px;
-    padding: 10px 10px 10% 10px;
+    padding: 20px 10px 10% 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,7 +129,8 @@
 }
 .side-nav.close .search {
     width: 0px;
-    margin: 15px 10px 0 10px;
+    padding: 10px 20px;
+    margin: 30px 10px 0 10px;
     justify-content: center;
 }
 .side-nav.close .search input {
