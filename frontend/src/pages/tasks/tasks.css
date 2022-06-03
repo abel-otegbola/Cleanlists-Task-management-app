@@ -3,16 +3,22 @@
   /*
   Tasks styles
   */
-  .tasks {
-    display: flex;
-    padding: 0px;
-    margin: 0;
-    background-color: rgb(227, 237, 253);
-    border-radius: 5px;
+.tasks {
+  display: flex;
+  padding: 0px;
+  margin: 0;
+  background-color: rgb(227, 237, 253);
+  border-radius: 5px;
 }
 .tasks section {
   flex: 1;
   padding: 10px 10px 10px 0;
+  padding-left: 19.5%;
+  transition: 1s;
+}
+.tasks .side-nav.close ~ section {
+    padding-left: 10px;
+    transition: 1s;
 }
 .tasks-container {
   background-color: #fff;
@@ -22,31 +28,46 @@
 }
 .tasks-container .top-board {
   font-size: 10px;
-  padding: 0 5%;
+  padding: 10px 5%;
+  margin: 20px 30px;
   display: flex;
   justify-content: space-between;
-  color: #000000;
-  border: 1px solid rgb(227, 237, 253);
+  align-items: center;
+  color: #686767;
+  background-color: rgb(246, 248, 250);
   border-radius: 10px;
 }
 .tasks-container .top-board h2 {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.tasks-container .top-board h2 span {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(227, 226, 226);
 }
 .top-board .change-view {
   display: flex;
 }
 .top-board .change-view svg {
-  margin: 0 5px;
+  margin: 0;
+  padding: 10px 15px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(227, 226, 226);
   cursor: pointer;
 }
 .top-board h2 {
   cursor: pointer;
 }
-.top-board h2.active {
+.top-board h2.active,
+.top-board h2.active span {
   color: #0ff62d;
 }
 .top-board .change-view svg.active {
   color: #0ff62d;
+  border-color: #0ff62d;
 }
 .tasks-container h3 {
     margin-left: 30px;
@@ -58,5 +79,13 @@
 @media screen and (max-width: 1200px) {
   .tasks {
     padding-left: 80px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tasks-container .top-board {
+    display: none;
+  }
+  .tasks {
+    padding-left: 5px;
   }
 }

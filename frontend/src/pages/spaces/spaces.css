@@ -5,6 +5,12 @@
 .spaces section {
     flex: 1;
     padding: 10px 10px 10px 0;
+    padding-left: 19.5%;
+    transition: 1s;
+}
+.spaces .side-nav.close ~ section {
+    padding-left: 10px;
+    transition: 1s;
 }
 .spaces section .search {
     margin-bottom: 10px;
@@ -20,6 +26,7 @@
 .spaces .spaces-board .space {
     padding: 10px 20px;
     background-color: rgb(251, 251, 251);
+    margin-top: 10px;
     margin-right: 10px;
     width: 80px;
     display: flex;
@@ -55,4 +62,18 @@
     background-color: rgb(0, 224, 15);
     color: #fff;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+    .spaces section {
+        padding-left: 250px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .spaces section {
+        min-height: 70vh;
+    }
+    .spaces .spaces-board .space-list {
+        flex-wrap: wrap;
+    }
 }

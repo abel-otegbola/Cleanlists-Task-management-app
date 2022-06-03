@@ -7,9 +7,9 @@ Create task styles
   padding: 10px;
 }
 .create-tasks h4 {
-  text-align: center;
   text-transform: capitalize;
   color: #18db53;
+  margin-left: 4%;
 }
 .create-task {
   display: flex;
@@ -31,7 +31,7 @@ Create task styles
   flex-wrap: wrap;
 }
 .create-task label p {
-  font-weight: 600;
+  font-weight: 500;
   margin-left: 10px;
 }
 .create-task label input,

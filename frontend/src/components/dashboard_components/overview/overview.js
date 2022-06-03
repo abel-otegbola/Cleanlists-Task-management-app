@@ -1,22 +1,18 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFire, faPlusCircle, faTasks } from "@fortawesome/free-solid-svg-icons";
-import demoUser from "../../../assets/imgs/demouser.jpg"
-import { Doughnut } from 'react-chartjs-2'; 
+import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
 import "./overview.css"
 
 const Overview = ({ user, tasksArray }) => {
     const [tasksctx, setTasksCtx] = useState()
-    const [progress, setProgress] = useState(0)
+    // const [progress, setProgress] = useState(0)
     const [completed, setCompleted] = useState([])
     const [unfinished, setUnfinished] = useState([])
 
     useEffect(() => {
-
-        const today = `${new Date().getFullYear()}-0${new Date().getMonth() + 1}-${new Date().getDate()}`
         
-       setUnfinished(tasksArray.filter(task => (task.status !== 'completed' && task.createdBy === user && task.date === today)))
-       setCompleted(tasksArray.filter(task => (task.status === 'completed' && task.createdBy === user && task.date === today)))
+       setUnfinished(tasksArray.filter(task => (task.status !== 'completed' && task.createdBy === user)))
+       setCompleted(tasksArray.filter(task => (task.status === 'completed' && task.createdBy === user)))
 
        setTasksCtx({
             labels: [],
@@ -39,10 +35,10 @@ const Overview = ({ user, tasksArray }) => {
             }]
         })
 
-       if(tasksctx !== undefined) {
-        let overall = tasksctx.datasets[0].data[0] + tasksctx.datasets[0].data[1]
-        setProgress((tasksctx.datasets[0].data[0]/overall) * 100)
-       }
+    //    if(tasksctx !== undefined) {
+    //     let overall = tasksctx.datasets[0].data[0] + tasksctx.datasets[0].data[1]
+    //     setProgress((tasksctx.datasets[0].data[0]/overall) * 100)
+    //    }
 
     }, [setTasksCtx, tasksctx, completed.length, unfinished.length, tasksArray, user])
 
@@ -50,20 +46,25 @@ const Overview = ({ user, tasksArray }) => {
     return (
         <div className="overview">
             <div className="user-stats">
-                <img src={demoUser} width="100" height="100" alt="user"/>
                 <div className="info">
-                    <h1>{(user !== undefined)? user : "Welcome"}</h1>
-                    <p>Hello! you have {unfinished.length} new tasks to finish today</p>
-                    <div className="all-tasks">
-                        <FontAwesomeIcon icon={faTasks} />
-                        <h3>{unfinished.length}</h3>
+                    <div className="task">
+                        <h3>{completed[0] && completed[0].title}</h3>
+                        <p>#{completed[0] && completed[0].space}</p>
+                        <div className="duration">
+                            <p><FontAwesomeIcon icon={faCalendar} /> {completed[0] && completed[0].date}</p>
+                            <p><FontAwesomeIcon icon={faClock} /> {completed[0] && completed[0].deadline}</p>
+                        </div>
                     </div>
-                    <div className="remaining-tasks">
-                        <FontAwesomeIcon icon={faFire} />
-                        <h3>{completed.length}</h3>
+                    <div className="task">
+                        <h3>{unfinished[0] && unfinished[0].title}</h3>
+                        <p>#{unfinished[0] && unfinished[0].space}</p>
+                        <div className="duration">
+                            <p><FontAwesomeIcon icon={faCalendar} /> {unfinished[0] && unfinished[0].date}</p>
+                            <p><FontAwesomeIcon icon={faClock} /> {unfinished[0] && unfinished[0].deadline}</p>
+                        </div>
                     </div>
                 </div>
-                <div className="chart today">
+                {/* <div className="chart today">
                         {
                             (tasksctx !== undefined) ?
                                 <Doughnut title="traffic-chart" data={tasksctx} options={{ maintainAspectRatio: true }} />
@@ -71,19 +72,7 @@ const Overview = ({ user, tasksArray }) => {
                                 ""
                         }  
                         <h2>{parseInt(progress)}%</h2>
-                </div>
-            </div>
-            <div className="actions">
-                <h3>Important <span>{tasksArray.filter(task => task.priority === 'High' && task.createdBy === user).length}</span></h3>
-                <h3>completed <span>{tasksArray.filter(task => task.status === 'completed' && task.createdBy === user).length}</span></h3>
-                <div className="action-button">
-                    <a href="/spaces">Add Space</a>
-                    <FontAwesomeIcon icon={faPlusCircle} />
-                </div>
-                <div className="action-button">
-                    <a href="/tasks">Add Task</a>
-                    <FontAwesomeIcon icon={faPlusCircle} />
-                </div>
+                </div> */}
             </div>
         </div>
     )

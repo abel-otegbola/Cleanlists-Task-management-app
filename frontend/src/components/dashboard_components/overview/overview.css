@@ -1,7 +1,7 @@
 .overview {
     margin: 10px 0 0 0;
     background-color: #fff;
-    padding: 20px 4%;
+    padding: 20px 2%;
     border-radius: 5px;
     width: 65%;
     max-height: 65%;
@@ -11,43 +11,47 @@
     justify-content: space-between;
     align-items: center;
 }
-.overview .user-stats img {
-    border-radius: 50%;
-    margin-right: 7%;
-    padding: 5px;
-    border: 1px solid #0ff62d;
-}
-.overview .user-stats .info .all-tasks,
-.overview .user-stats .info .remaining-tasks {
-    display: flex;
-    align-items: center;
-    padding: 2px 3px;
-    margin-right: 20px;
-    background-color: #0ff62d;
-    color: #fff;
-    border-radius: 20px;
-    line-height: 0px;
-}
-.overview .user-stats .info .all-tasks {
-    background-color: #0fd0f6;
-}
 .overview .user-stats .info {
     display: flex;
-    flex-wrap: wrap;
-    line-height: 10px;
-}
-.overview .user-stats .info h1,
-.overview .user-stats .info p {
-    width: 100%;
-    line-height: 20px;
-}
-.overview .user-stats .info svg {
-    padding: 7px 10px;
-    background: rgba(0, 0, 0, 0.301);
-    border-radius: 15px;
+    line-height: 30px;
 }
 .overview .user-stats .info h3 {
-    padding: 0px 10px;
+    margin-bottom: 40px;
+    height: 100px;
+}
+.overview .user-stats .info .task {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    background-color: #15d82f;
+    color: #feffff;
+    padding: 10px 25px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 30px #9f9f9f4a;
+}
+.overview .user-stats .info .task:nth-child(2) {
+    background-color: #ffffff;
+    color: #767676;
+}
+.overview .user-stats .info .duration {
+    display: flex;
+    justify-content: space-between;
+}
+.overview .user-stats .info svg {
+    padding: 4px 7px;
+    font-size: 10px;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #0ff62d;
+    color: #0ff62d;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+.overview .user-stats .info p {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
 }
 .chart {
     width: 100px;

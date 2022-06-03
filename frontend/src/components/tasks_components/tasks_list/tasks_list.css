@@ -1,6 +1,7 @@
 .task-grids {
-    font-size: 13px;
+    font-size: 14px;
     display: flex;
+    flex-wrap: wrap;
     padding: 10px;
     margin: 10px 0;
     justify-content: space-between;
@@ -16,11 +17,12 @@
 .task-grids h4 {
     flex: 1;
     line-height: 20px;
+    font-weight: 600;
     margin-left: 5px;
 }
 .task-grids p {
     margin-right: 10px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     padding: 5px 7px;
 }
@@ -52,11 +54,12 @@
 }
 
 .tasks-container__box.list {
-  padding:0;
+  padding: 0;
 }
 .tasks-container__box.list h4 {
-  padding:0;
-  max-width: 30%;
+  padding: 0;
+  max-width: 40%;
+  min-width: 30%;
 }
 .tasks-container__box.list img {
   width: 100px;
@@ -84,11 +87,12 @@ grid view
   background-color: #Fff;
   flex-direction: column;
   display: flex;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 10px;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
+  box-shadow: 2px 3px 10px rgba(187, 188, 188, 0.394);
 }
 .tasks-container__box.grid .task-grids h4 {
   width: 100%;
@@ -120,9 +124,29 @@ grid view
   width: fit-content;
   border-radius: 2px;
 }
+.tasks-container__box.grid .task-grids p:nth-child(4) {
+  background-color: #f1ffe4;
+  color: rgb(54, 98, 22);
+  padding: 5px 7px;
+  border-radius: 2px;
+  width: fit-content;
+}
 .tasks-container__box.grid .task-grids svg.options {
   position: absolute;
   bottom: 5px;
   right: 5px;
   padding: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .spaces .spaces-board .space-list {
+      flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tasks-container__box.grid .task-grids {
+    padding: 10px 0px;
+    margin: 10px 0;
+  }
 }

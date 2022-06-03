@@ -16,7 +16,7 @@ const History = ({ user, tasksArray }) => {
        setTasksCtx({
             labels: [],
             datasets: [{
-                label: 'Traffic',
+                label: 'Progress',
                 data: [completed.length, unfinished.length],
                 options: {
                     scales: {
@@ -47,12 +47,12 @@ const History = ({ user, tasksArray }) => {
             <h2 className='heading'>History</h2>
             
             <div className='chart-overview'>
-                <h3>Completed <span>{tasksArray.filter(element => (element.status === "completed" && element.createdBy === user)).length}</span></h3>
-                <h3>Unfinished <span>{tasksArray.filter(element => (element.status !== "completed" && element.createdBy === user)).length}</span></h3>
+                <h3> <span>{tasksArray.filter(element => (element.status === "completed" && element.createdBy === user)).length}</span> Completed</h3>
+                <h3> <span>{tasksArray.filter(element => (element.status !== "completed" && element.createdBy === user)).length}</span> Unfinished</h3>
                 <div className="chart">
                         {
                             (tasksctx !== undefined) ?
-                                <Doughnut title="traffic-chart" data={tasksctx} options={{ maintainAspectRatio: true }} />
+                                <Doughnut title="Progress-chart" data={tasksctx} options={{ maintainAspectRatio: true }} />
                                 :
                                 ""
                         }  
@@ -68,8 +68,6 @@ const History = ({ user, tasksArray }) => {
                                 <h4>{task.title}</h4>
                                 <p className={task.priority}>{task.priority}</p>
                                 <p>{task.deadline}</p>
-                                <p>{task.date}</p>
-                                <p className={task.status}>{task.status}</p>
                             </div>
                         )})
                     }
@@ -82,8 +80,6 @@ const History = ({ user, tasksArray }) => {
                                 <h4>{task.title}</h4>
                                 <p className={task.priority}>{task.priority}</p>
                                 <p>{task.deadline}</p>
-                                <p>{task.date}</p>
-                                <p className={task.status}>{task.status}</p>
                             </div>
                         )})
                     }

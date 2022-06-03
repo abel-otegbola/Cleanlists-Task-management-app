@@ -13,7 +13,7 @@ const Navbar = ({ user, logout }) => {
             </div>
 
             <div className="menu">
-                <div className="user" id="user">{(user === undefined || user === "" || user === null)? <a href="/login">Login</a> : user }</div>
+                <div className="user" id="user">{(user === undefined || user === "" || user === null)? <a href="/login">Login</a> : "Account" }</div>
                 <nav style={{ display: (user === "" || user === undefined)? "none": "" }}>
                     <ul>
                         <li><a href="/dashboard"><FontAwesomeIcon icon={faDashboard}/> Dashboard</a></li>

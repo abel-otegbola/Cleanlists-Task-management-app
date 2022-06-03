@@ -49,7 +49,7 @@ const TasksList = ({ user, view, tasksArray }) => {
                         { 
                             tasks.filter(element => (element.createdBy === user)).map(task => { return (  
                                 <div key={task.id} className={`task-grids ${task.status}`}>
-                                    <img src={task_bg} alt="task-bg"/>
+                                    {/* <img src={task_bg} alt="task-bg"/> */}
                                     <h4>{task.title}</h4>
 
                                     <p><span>{task.date}</span> | <span>{task.deadline} min</span></p>

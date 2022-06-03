@@ -23,6 +23,23 @@
     width: 50%;
     border: 1px solid #e6eaf6;
   }
+.login form .errMsg {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fef2e9;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: rgb(225, 58, 58);
+}
+.login form .errMsg span {
+  text-align: left;
+  line-height: 25px;
+}
+.login form .errMsg svg {
+  padding: 0;
+}
 .login form label {
     width: 47%;
   }
@@ -39,9 +56,15 @@
     color: #fff;
     background-color: #04EC4A;
     border: none;
-    border-radius: 7px;
+    border-radius: 5px;
     cursor: pointer;
   }
 .login form button:hover {
     background-color: #0fc746;
+}
+
+@media screen and (max-width: 800px) {
+  .login form label {
+    width: 100%;
+  }
 }

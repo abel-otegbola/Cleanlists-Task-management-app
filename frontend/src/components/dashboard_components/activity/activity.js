@@ -59,10 +59,10 @@ const Activity = ({ user, tasksArray }) => {
                          },
                      },
                      backgroundColor: [
-                         'rgba(255, 255, 232, 0)'
+                         'rgba(232, 255, 255, 0)'
                      ],
                      borderColor: [
-                         'rgba(99, 132, 255, 0.3)'
+                         'rgba(132, 255, 132, 0.3)'
                      ],
                      pointBackgroundColor: [
                          'rgba(40, 50, 0, 0.6)'
@@ -77,7 +77,7 @@ const Activity = ({ user, tasksArray }) => {
 
     return (
         <div className="activity">
-            <h2>Activity</h2>
+            <h3>Activity</h3>
             <div className='History'> 
             {
                    (salesctx !== undefined) ?

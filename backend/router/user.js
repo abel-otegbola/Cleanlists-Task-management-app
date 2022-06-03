@@ -3,8 +3,12 @@ const mysql = require("mysql");
 const bcrypt = require("bcryptjs")
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
+var flash = require("connect-flash")
 
 const router = express.Router()
+const app = express()
+
+app.use(flash())
 
 //Create mysql database connection
 const db = mysql.createConnection({
@@ -19,6 +23,7 @@ const db = mysql.createConnection({
     console.log("db Connected!");
   });
   
+let msg = {}
   passport.use(new LocalStrategy(function verify(username, password, cb) {
             
             let findsql = `SELECT * FROM users WHERE name = '${username}'`;
@@ -28,6 +33,7 @@ const db = mysql.createConnection({
                     return cb(err)
                 }
                 if(result.length < 1) {
+                    msg = { status: "fail", msg: "Username does not exist"}
                     return cb(null, false, { message: 'Username dont exist' });
                 }
                 else {
@@ -35,9 +41,11 @@ const db = mysql.createConnection({
                         if(err) throw err;
         
                         if(isMatch) { 
+                            msg = { status: "success", msg : ""}
                             return cb(null, username)
                         }
                         else {
+                            msg = { status: "fail", msg: "Password is not correct"}
                             return cb(null, false, { message: 'Password Incorrect' });
                         }
                     })
@@ -54,10 +62,28 @@ router.get('/logout', function(req, res, next) {
     res.redirect('/login');
 });
 //User Login
-router.post("/loginhandler", passport.authenticate('local', { failureRedirect: '/login' }),  function(req, res) {
-	user = req.user
-	res.redirect('/dashboard');
-});
+router.post("/loginhandler", 
+    passport.authenticate('local', { 
+        failureRedirect: '/login'
+    }), 
+    function(req, res) {
+        user = req.user;
+        res.redirect('/dashboard')
+    }
+);
+
+function requireLogin(req, res, next) {
+    if(!req.user) return res.redirect("/login");
+    next();
+}
+
+router.get('/dashboard', requireLogin, function(req, res) {
+    res.redirect('/dashboard')
+})
+
+router.get("/loginStatus", (req, res) => {
+    res.json(msg)
+})
 
 
 
@@ -78,6 +104,7 @@ router.get("/getUser", (req, res) => {
     res.send({user : user})
 })
 
+let regMsg = {}
 router.post('/registerHandler', (req, res) => 
 {//Hash password
      bcrypt.genSalt(10, (err, salt) => 
@@ -107,21 +134,27 @@ router.post('/registerHandler', (req, res) =>
                         let sql = 'INSERT INTO users SET ?';
                         let query = db.query(sql, newuser, (err) => {
                             if (err) throw err;
+                            msg = { status: "success", msg: "Registered! Please login in with username and password to continue" }
                             res.redirect("/login")
                     })}
                     else {
-                        res.send('Username already exists')
+                        regMsg = { status: "fail", msg: "username already exists"}
+                        res.redirect("/register")
                     }
                 })
 
                 
             }
             else {
-                res.send('Email already registered')
+                regMsg = { status: "fail", msg: 'Email already registered'}
+                res.redirect("/register")
             }
         })
    })
    )
+})
+router.get("/registerStatus", (req, res) => {
+    res.json(regMsg)
 })
          
         
